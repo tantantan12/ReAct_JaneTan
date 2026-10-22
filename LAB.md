@@ -78,6 +78,10 @@ This lab configures Python 3.11 and the dependencies in requirements.txt. These 
 
 ## Troubleshooting
 
+The notebook runs in the VS Code Jupyter extension with `ipykernel`; a full JupyterLab server is not installed. The remaining packages support model calls, Wikipedia retrieval, and the original environment/wrappers.
+
+If Codespaces setup stalls, select **View logs**. Look for `Installing minimal lab dependencies...` to see whether package setup has started. If logs stop before that message, dependency installation has not yet begun. After updating the repository, rebuild an existing Codespace to apply the configuration.
+
 
 - **Packages missing:** In the repository-root terminal, run `python -m pip install -r requirements.txt`, then restart the notebook kernel.
 - **Missing key/model:** Add the Codespaces secret and restart the codespace; supply the instructor-approved model ID. Do not print secret values.
