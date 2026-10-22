@@ -1,0 +1,8 @@
+# Classroom HotpotQA notebook; other research environments require separate setup.
+openai>=1.68.2,<3
+numpy==1.26.4
+gym==0.26.2
+requests>=2.32.3,<3
+beautifulsoup4>=4.12.3,<5
+ipykernel>=6.29.5,<7
+jupyterlab>=4.3,<5
