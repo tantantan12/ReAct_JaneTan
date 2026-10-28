@@ -1,3 +1,4 @@
+# Local API keys and environment secrets (never commit these files).
 .env
 .env.*
 !.env.example

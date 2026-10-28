@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 
 # import wikipedia
 
+# Wikipedia rejects requests without a descriptive User-Agent (HTTP 403).
+HEADERS = {"User-Agent": "ReAct-classroom-lab/1.0 (educational use; https://github.com/ysymyth/ReAct)"}
+
 def clean_str(p):
   return p.encode().decode("unicode-escape").encode("latin1").decode("utf-8")
 
@@ -99,7 +102,7 @@ class WikiEnv(gym.Env):
     entity_ = entity.replace(" ", "+")
     search_url = f"https://en.wikipedia.org/w/index.php?search={entity_}"
     old_time = time.time()
-    response = requests.get(search_url, timeout=20)
+    response = requests.get(search_url, headers=HEADERS, timeout=20)
     response.raise_for_status()
     response_text = response.text
     self.search_time += time.time() - old_time
